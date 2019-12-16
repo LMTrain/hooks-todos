@@ -4,7 +4,7 @@ import {UserContext} from './index';
 //PROPS DRILLING
 // export default function App(props)
 // <div>{props.username}</div>;
-// DE-STRUCTURING
+// <== DE-STRUCTURING ===>
 // export default function App({username}) {
 //   return <div>
 //     <Navbar username={username} />

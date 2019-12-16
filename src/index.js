@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-//PROPS DRILLING
+//<== PROPS DRILLING ==>
 // const username= "Laycon"
 // ReactDOM.render(<App username={username}/>, document.getElementById('root'));
 

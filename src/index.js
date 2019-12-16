@@ -3,7 +3,19 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//PROPS DRILLING
+// const username= "Laycon"
+// ReactDOM.render(<App username={username}/>, document.getElementById('root'));
+
+export const  UserContext = React.createContext()
+const username = "Laycon"
+
+ReactDOM.render(
+    <UserContext.Provider value={username}>
+        <App />
+    </UserContext.Provider>
+
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

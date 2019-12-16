@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {useContext } from 'react';
+import {UserContext} from './index';
+
+//PROPS DRILLING
+// export default function App(props)
+// <div>{props.username}</div>;
+// DE-STRUCTURING
+// export default function App({username}) {
+//   return <div>
+//     <Navbar username={username} />
+//   </div>;  
+// }
+
 export default function App() {
-  return (
-    <div>App</div>
-  )
+  const value = useContext(UserContext)
+  return <div>
+    Hello, {value}
+    {/* <UserContext.Consumer>
+      {value => <div>Hello, {value}</div>}
+    </UserContext.Consumer> */}
+    </div>;
+  
 }
 

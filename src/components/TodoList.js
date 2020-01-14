@@ -9,21 +9,32 @@ export default function TodoList() {
 
     return (
         <div className="container mx-auto max-w-md text-center font-mono">
+            <h1 className="text-bold">TODOS</h1>
             <h1 className="text-bold"><b>{title}</b></h1>
             <ul className="list-reset text-white p-0">
                 {state.todos.map(todo => (
-                    <li key={todo.id} className="flex items-center bg-black border-black border-dashed border-2 my-2 py-4">
+                    <li 
+                        key={todo.id}
+                        className="flex items-center bg-black border-black border-dashed border-2 my-2 py-4"
+                        >
                         <span
-                            onDoubleClick={() => dispatch({ type: "TOGGLE_TODO", payload: todo})} 
-                            className={`flex-1 ml-12 cursor-pointer ${todo.complete && "line-through text-grey-darkest"}`}>{todo.text}</span>
+                            onDoubleClick={() => 
+                                dispatch({ type: "TOGGLE_TODO", payload: todo})
+                            } 
+                            className={`flex-1 ml-12 cursor-pointer ${todo.complete && "line-through text-grey-darkest"}`}
+                            >
+                                {todo.text}
+                        </span>
                         <button>
                             <img
                                 src="https://icon.now.sh/edit/0050c5"
                                 alt="Edit Icon"
                                 className="h-6"
                             />
-                        </button>
-                        <button>
+                        </button>                            
+                        <button
+                            onClick={() => dispatch({ type: "REMOVE_TODO", payload: todo})}
+                        >
                             <img
                                 src="https://icon.now.sh/delete/8b0000"
                                 alt="Edit Icon"
